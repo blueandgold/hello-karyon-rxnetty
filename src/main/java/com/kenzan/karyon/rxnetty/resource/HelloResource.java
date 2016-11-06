@@ -44,7 +44,7 @@ public class HelloResource implements RequestHandler<ByteBuf, ByteBuf>{
                 .flatMap(new Func1<String, Observable<Void>>() {
                     @Override
                     public Observable<Void> call(String body) {
-                        response.writeString(body);
+                        response.writeString(body + " aaa");
                         return response.close();
                     }
                 });
@@ -59,7 +59,7 @@ public class HelloResource implements RequestHandler<ByteBuf, ByteBuf>{
                 .flatMap(new Func1<String, Observable<Void>>() {
                     @Override
                     public Observable<Void> call(String body) {
-                        response.writeString(body);
+                        response.writeString(body + " bbb");
                         return response.close();
                     }
                 });
