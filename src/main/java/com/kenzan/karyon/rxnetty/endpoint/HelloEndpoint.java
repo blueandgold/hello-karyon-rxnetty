@@ -27,13 +27,13 @@ import rx.Observable;
 public class HelloEndpoint {
 
     public Observable<String> getHello() {
-        return Observable.just("Hello");
+        return Observable.just("Hello222");
     }
 
     public Observable<String> getHelloName(HttpServerRequest<ByteBuf> request) {
         UriPattern pattern = new UriPattern(Pattern.compile("/hello/(.*)"));
         String name = pattern.match(request.getUri()).group(1);
 
-        return Observable.just("Hello " + name);
+        return Observable.just("Hello333 " + name);
     }
 }
